@@ -13,7 +13,7 @@ void swapping(int *, int *);
 void selection_sort(int *array, size_t size)
 {
 	size_t i, j, myMin;
-
+	bool isSwapped;
 	if (array == NULL)
 		return;
 	for (i = 0; i < size - 1; i++)
@@ -21,12 +21,17 @@ void selection_sort(int *array, size_t size)
 		myMin = i;
 		for (j = i + 1; j < size; j++)
 		{
+			isSwapped = false;
 			if (array[myMin] > array[j])
+			{
 				myMin = j;
-			if (myMin != i)
+				isSwapped = true;
+			}
+			if (myMin != i && isSwapped)
 			{
 				swapping(&array[i], &array[myMin]);
 				print_array(array, size);
+				isSwapped = false;
 			}
 		}
 	}
