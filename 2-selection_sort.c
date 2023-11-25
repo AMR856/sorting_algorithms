@@ -1,6 +1,6 @@
 #include "sort.h"
 
-void swapping(int *, int *);
+void swapping(int *, int *, int*, size_t);
 
 /**
  * selection_sort - A function to sort elements using selection sort
@@ -23,12 +23,11 @@ void selection_sort(int *array, size_t size)
 		{
 			if (array[myMin] > array[j])
 				myMin = j;
-			if (myMin != i)
-			{
-				swapping(&array[i], &array[myMin]);
-				print_array(array, size);
-			}
 		}
+		if (myMin != i)
+			{
+				swapping(&array[i], &array[myMin], array, size);
+			}
 	}
 }
 
@@ -42,11 +41,11 @@ void selection_sort(int *array, size_t size)
  * Return: Nothing
 */
 
-void swapping(int *right, int *left)
+void swapping(int *right, int *left, int *array, size_t size)
 {
 	int temp;
-
 	temp = *right;
 	*right = *left;
 	*left = temp;
+	print_array(array, size);
 }

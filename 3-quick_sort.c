@@ -66,7 +66,7 @@ int partition(int *myArray, int low, int high, size_t mySize)
 		}
 	}
 	swapping(&myArray[i + 1], &myArray[high]);
-	print_array(myArray, mySize);
+
 	return (i + 1);
 }
 
