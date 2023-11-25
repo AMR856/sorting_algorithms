@@ -5,7 +5,7 @@
  * @array: A pointer to the array
  * @size: The size of the array
  *
- * Return: Nothing (void)
+ * Return: Nothing (void) it was not me
 */
 
 void counting_sort(int *array, size_t size)
