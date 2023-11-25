@@ -56,9 +56,9 @@ int partition(int *myArray, int low, int high, size_t mySize)
 	myPivot = myArray[high];
 	i = (low - 1);
 
-	for (j = low; j <= high; j++)
+	for (j = low; j < high; j++)
 	{
-		if (myPivot > myArray[j])
+		if (myPivot >= myArray[j])
 		{
 			i++;
 			swapping(&myArray[i], &myArray[j]);
@@ -66,7 +66,7 @@ int partition(int *myArray, int low, int high, size_t mySize)
 		}
 	}
 	swapping(&myArray[i + 1], &myArray[high]);
-
+	print_array(myArray, mySize);
 	return (i + 1);
 }
 
