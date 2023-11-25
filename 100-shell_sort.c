@@ -10,20 +10,24 @@
 
 void shell_sort(int *array, size_t size)
 {
-	size_t i, j, myGap = 1;
+	size_t i, j;
+	size_t myGap;
 	int myTemp;
 
 	if (size < 2)
 		return;
-	while ((myGap = myGap * 3 + 1) < size)
-	;
+
+	myGap = 1;
+	while (myGap < size)
+		myGap = myGap * 3 + 1;
 	myGap = (myGap - 1) / 3;
+
 	for (; myGap > 0; myGap = (myGap - 1) / 3)
 	{
 		for (i = myGap; i < size; i++)
 		{
 			myTemp = array[i];
-			for (j = 1; j >= myGap && myTemp <= array[j - myGap]; j = j - myGap)
+			for (j = i; j >= myGap && myTemp < array[j - myGap]; j -= myGap)
 				array[j] = array[j - myGap];
 			array[j] = myTemp;
 		}
