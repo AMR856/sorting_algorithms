@@ -9,7 +9,7 @@
  */
 int main(void)
 {
-    int array[] = {1, 1, 1, 1, 1};
+    int array[] = {20, 19, 18, 17, 16};
     selection_sort(array, 5);
     print_array(array, 5);
     return 0;
