@@ -59,7 +59,7 @@ void mergingEverything(int *myC, int *tMO, size_t l, size_t theM, size_t r)
 {
 	size_t i, j, k = 0;
 
-	printf("Merging..\n");
+	printf("Merging...\n");
 	printf("[left]: ");
 	print_array(tMO + l, theM - l);
 	printf("[right]: ");
