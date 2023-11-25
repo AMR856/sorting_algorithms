@@ -25,9 +25,9 @@ void selection_sort(int *array, size_t size)
 				myMin = j;
 		}
 		if (myMin != i)
-			{
-				swapping(&array[i], &array[myMin], array, size);
-			}
+		{
+			swapping(&array[i], &array[myMin], array, size);
+		}
 	}
 }
 
@@ -37,13 +37,15 @@ void selection_sort(int *array, size_t size)
  * swapping - A function to swap elements
  * @right: A pointer to the right element
  * @left: A pointer to the left element
- *
+ * @array: The pointer
+ * @size: The size
  * Return: Nothing
 */
 
 void swapping(int *right, int *left, int *array, size_t size)
 {
 	int temp;
+
 	temp = *right;
 	*right = *left;
 	*left = temp;
