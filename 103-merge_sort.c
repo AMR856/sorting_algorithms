@@ -43,13 +43,13 @@ void myMerge(int *myCopy, int *theMainArray, size_t left, size_t right)
 	}
 }
 
-/***
+/**
  * mergingEverything - A function to merge not just for calling other functions
  * @myC: The copy of the array
  * @tMO: The main array that is required to be sorted
- * @left: The left index of the array
- * @theMiddle: The middle of the array that we got above
- * @right: The ubber right of the array
+ * @l: The left index of the array
+ * @theM: The middle of the array that we got above
+ * @r: The ubber right of the array
  *
  * Return: Nothing (void)
 */
