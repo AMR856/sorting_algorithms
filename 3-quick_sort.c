@@ -58,15 +58,21 @@ int partition(int *myArray, int low, int high, size_t mySize)
 
 	for (j = low; j < high; j++)
 	{
-		if (myPivot >= myArray[j])
+		if (myPivot > myArray[j])
 		{
 			i++;
-			swapping(&myArray[i], &myArray[j]);
-			print_array(myArray, mySize);
+			if (myArray[i] != myArray[j])
+			{
+				swapping(&myArray[i], &myArray[j]);
+				print_array(myArray, mySize);
+			}
 		}
 	}
-	swapping(&myArray[i + 1], &myArray[high]);
-	print_array(myArray, mySize);
+	if (myArray[i + 1] != myArray[high])
+	{
+		swapping(&myArray[i + 1], &myArray[high]);
+		print_array(myArray, mySize);
+	}
 	return (i + 1);
 }
 
